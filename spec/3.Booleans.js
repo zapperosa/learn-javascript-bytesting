@@ -3,8 +3,8 @@ describe("Booleans", () => {
 	describe("constants", () => {
 
 		it("false and true are the only existing booleans", () => {
-			expect("solve me").toEqual(jasmine.any(Boolean));
-			expect("solve me").toEqual(jasmine.any(Boolean));
+			expect(true).toEqual(jasmine.any(Boolean));
+			expect(false).toEqual(jasmine.any(Boolean));
 		});
 
 	});
@@ -12,20 +12,20 @@ describe("Booleans", () => {
 	describe("operations", () => {
 
 		it("logical and", () => {
-			expect("solve me").toBe(true && true);
-			expect("solve me").toBe(true && false);
-			expect("solve me").toBe(false && false);
+			expect(true).toBe(true && true);
+			expect(false).toBe(true && false);
+			expect(false).toBe(false && false);
 		});
 
 		it("logical or", () => {
-			expect("solve me").toBe(true || true);
-			expect("solve me").toBe(true || false);
-			expect("solve me").toBe(false || false);
+			expect(true).toBe(true || true);
+			expect(true).toBe(true || false);
+			expect(false).toBe(false || false);
 		});
 
 		it("not", () => {
-			expect("solve me").toBe(!false);
-			expect("solve me").toBe(!true);
+			expect(true).toBe(!false);
+			expect(false).toBe(!true);
 		});
 
 	});
@@ -33,27 +33,27 @@ describe("Booleans", () => {
 	describe("cast", () => {
 
 		it("use Boolean() to convert from truthy/falsy booleans to boolean", () => {
-			expect("solve me").toBe(Boolean(true));
-			expect("solve me").toBe(Boolean(false));
+			expect(true).toBe(Boolean(true));
+			expect(false).toBe(Boolean(false));
 		});
 
 		it("use Boolean() to convert from truthy/falsy objects to boolean", () => {
-			expect("solve me").toBe(Boolean([]));
-			expect("solve me").toBe(Boolean({}));
-			expect("solve me").toBe(Boolean(null));
-			expect("solve me").toBe(Boolean(undefined));
+			expect(true).toBe(Boolean([]));
+			expect(true).toBe(Boolean({}));
+			expect(false).toBe(Boolean(null));
+			expect(false).toBe(Boolean(undefined));
 		});
 
 		it("use Boolean() to convert from truthy/falsy strings to boolean", () => {
-			expect("solve me").toBe(Boolean("0"));
-			expect("solve me").toBe(Boolean("false"));
-			expect("solve me").toBe(Boolean(""));
+			expect(true).toBe(Boolean("0"));
+			expect(true).toBe(Boolean("false"));
+			expect(false).toBe(Boolean(""));
 		});
 
 		it("use Boolean() to convert from truthy/falsy numbers to boolean", () => {
-			expect("solve me").toBe(Boolean(1));
-			expect("solve me").toBe(Boolean(0));
-			expect("solve me").toBe(Boolean(NaN));
+			expect(true).toBe(Boolean(1));
+			expect(false).toBe(Boolean(0));
+			expect(false).toBe(Boolean(NaN));
 		});
 
 	});
@@ -65,7 +65,7 @@ describe("Booleans", () => {
 			if ("3") {
 				a = "changed";
 			}
-			expect("solve me").toBe(a);
+			expect("changed").toBe(a);
 		});
 
 		it("example with 0", () => {
@@ -73,7 +73,7 @@ describe("Booleans", () => {
 			if (0) {
 				a = "changed";
 			}
-			expect("solve me").toBe(a);
+			expect("original").toBe(a);
 		});
 
 		it("example with undefined", () => {
@@ -81,7 +81,7 @@ describe("Booleans", () => {
 			if (undefined) {
 				a = "changed";
 			}
-			expect("solve me").toBe(a);
+			expect("original").toBe(a);
 		});
 
 		it("example with \"false\"", () => {
@@ -89,7 +89,7 @@ describe("Booleans", () => {
 			if ("false") {
 				a = "changed";
 			}
-			expect("solve me").toBe(a);
+			expect("changed").toBe(a);
 		});
 
 	});
